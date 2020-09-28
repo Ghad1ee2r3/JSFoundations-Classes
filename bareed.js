@@ -69,11 +69,9 @@ class Person extends Point {
     this.name=name;
     this.x = x;
     this.y = y;
-    //if (x != 0 || y != 0)
+    
        this.location= new Point(x, y);
-   // else{
-    //  this.location= false
-    //}
+   
     this.wallet=new Wallet(0)
     
   }
@@ -119,20 +117,12 @@ moveTo = point => {
 
 
 sellTo = (customer, numberOfIceCreams) => {
- // this.location= point
- //let vendorMoney = Math.floor(Math.random() * 100);
- //let newPrice= Math.floor(Math.random() * 100);
+
   customer.location= this.location
   let expectedCost = numberOfIceCreams * this.price;
   customer.wallet.debit(expectedCost);
   this.wallet.credit(expectedCost)
- // expectedCost = numberOfIceCreams * newPrice
- // customerMoney = Math.floor(expectedCost + Math.random() * 100);
-  //customer.wallet.money = customerMoney;
-
-  //let expectedCustomerMoney = customerMoney - expectedCost;
-  //    let expectedVendorMoney = vendorMoney + expectedCost;
-
+ 
 }
 }
 
@@ -170,22 +160,13 @@ moveTo = point => {
 }
 
 _isInRange= vendor => {
-  //vendor.range
-  //vendor.range = range;
-
-  //const range =customerLocation.distanceTo(vendorLocation) + Math.random() * (isInRange ? 10 : -10);
-
+  
 
   const customerLocation = this.location
   const vendorLocation = vendor.location
   const isInRange = Math.random() > 0.5;
    const range = customerLocation.distanceTo(vendorLocation) 
-   //+ Math.random() * (isInRange ? 10 : -10); t
-   // if (range> 0 ||range< 0) {
-   //   return false
-   // }else{
-   //   return true 
-   // }
+   
    if (range<= vendor.range){
      return true
    }else{
