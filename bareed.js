@@ -190,6 +190,8 @@ _haveEnoughMoney=(vendor, numberOfIceCreams)=> {
 requestIceCream=(vendor, numberOfIceCreams)=>{
   if (this._isInRange(vendor) && this._haveEnoughMoney(vendor, numberOfIceCreams)){
     vendor.sellTo(this,numberOfIceCreams)
+    
+  }else{
     console.log(" the request failed - because is too far away or does not have Enough Money")
   }
 
